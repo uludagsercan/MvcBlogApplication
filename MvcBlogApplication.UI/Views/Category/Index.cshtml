@@ -1,0 +1,49 @@
+﻿@using BusinessLayer.Concrete
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    CategoryManager categoryManager = new CategoryManager();
+}
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                <h1>Id</h1>
+            </th>
+            <th>
+                <h1>Category Name</h1>
+            </th>
+            <th>
+                <h1>Category Date</h1>
+            </th>
+            <th>
+                <h1>
+                    Category Status
+                </h1>
+            </th>
+
+        </tr>
+        @foreach (var item in categoryManager.ListCategory())
+        {
+            <tr>
+                <td>
+                    @item.CategoryId
+                </td>
+                <td>
+                    @item.CategoryName
+                </td>
+                <td>
+                    @item.CategoryDate
+                </td>
+                <td>
+                    @item.CategoryStatus
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
