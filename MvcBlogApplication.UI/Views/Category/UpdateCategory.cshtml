@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete;
+@model Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateCategory</h2>
+<div class="container">
+    <div class="form-group">
+
+
+
+        @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+        {
+
+                @Html.TextBoxFor(x=> x.CategoryName)
+            
+            <button type="submit" class="btn btn-success">Güncelle</button>
+        }
+    </div>
+</div>
+
