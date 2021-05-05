@@ -34,7 +34,10 @@ namespace DataAccessLayer.Concrete
         {
             return _object.ToList();
         }
-
+        public T Find(Expression<Func<T,bool>>filter)
+        {
+            return _object.FirstOrDefault(filter);
+        }
         public List<T> List(Expression<Func<T, bool>> filter)
         {
             return _object.Where(filter).ToList();

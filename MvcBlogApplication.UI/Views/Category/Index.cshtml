@@ -1,11 +1,12 @@
-﻿@using BusinessLayer.Concrete
+﻿@using EntityLayer.Concrete;
+@model List<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @{
-    CategoryManager categoryManager = new CategoryManager();
+  
 }
 <div class="container">
     <table class="table table-bordered">
@@ -24,9 +25,14 @@
                     Category Status
                 </h1>
             </th>
+            <th>
+                <h1>
+                    Sil
+                </h1>
+            </th>
 
         </tr>
-        @foreach (var item in categoryManager.ListCategory())
+        @foreach (var item in Model)
         {
             <tr>
                 <td>
@@ -41,9 +47,19 @@
                 <td>
                     @item.CategoryStatus
                 </td>
+                <td>
+                    @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post,item.CategoryId))
+                    {
+                        <button type="submit" id=@item.CategoryId name="id" value=@item.CategoryId class="btn btn-danger">Sil</button>
+                    }
+                </td>
+                <td>
+                    <a href="~/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Update</a>
+                </td>
             </tr>
         }
     </table>
-
+    <a href="~/Category/AddCategory/" class="btn btn-success">Ekle</a>
+    
 </div>
 
