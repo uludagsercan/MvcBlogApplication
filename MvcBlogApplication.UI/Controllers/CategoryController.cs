@@ -11,11 +11,13 @@ using System.Web.Mvc;
 
 namespace MvcBlogApplication.UI.Controllers
 {
+    
     public class CategoryController : Controller
     {
         // GET: Category
         
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+       
         
         [HttpGet]
         public ActionResult Index()

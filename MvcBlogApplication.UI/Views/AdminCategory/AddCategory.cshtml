@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model Category
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.CategoryName)
+    @Html.ValidationMessageFor(x => x.CategoryName)
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+}
+

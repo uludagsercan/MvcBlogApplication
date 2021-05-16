@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="padding:10px">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Kategori Adı
+            </th>
+            <th>
+                Kategori Durumu
+            </th>
+            <th>
+                Sil
+            </th>
+            <th>
+                Güncelle
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <th>
+                    @item.CategoryId
+                </th>
+                <td>
+                    @item.CategoryName
+                </td>
+                <td>
+                    @item.CategoryStatus
+                </td>
+                @using (Html.BeginForm("DeleteCategory", "AdminCategory", FormMethod.Post, item.CategoryId))
+                {
+                    <td>
+                        <button type="submit" name="CategoryId" value=@item.CategoryId class="btn btn-danger">Sil</button>
+                    </td>
+                }
+                @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Get, item.CategoryId))
+                {
+                    <td>
+                        <button type="submit" value=@item.CategoryId name="id" class="btn btn-warning">Güncelle</button>
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+    @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Get))
+    {          
+                
+                <button class="btn btn-info" type="submit">Ekle</button>
+    }
+
+</div>
+

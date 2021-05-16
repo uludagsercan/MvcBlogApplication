@@ -1,0 +1,58 @@
+﻿@model Dictionary<string, string>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row" style="padding:10px">
+
+    <div class="card text-white bg-primary " style="max-width: 15rem;">
+        <div class="card-header">Toplam Kategori Sayısı</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(0).Value</p>
+        </div>
+    </div>
+
+    <div class="card text-white bg-dark" style="max-width: 15rem;">
+        <div class="card-header"> Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(1).Value</p>
+        </div>
+    </div>
+
+    <div class="card text-white bg-cyan  " style="max-width: 15rem;">
+        <div class="card-header"> Başlık tablosunda "yazılım" kategorisine ait başlık sayısı</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(1).Value</p>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-danger  " style="max-width: 15rem;">
+        <div class="card-header"> Yazar adında 'a' harfi geçen yazar sayısı</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(2).Value</p>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-fuchsia  " style="max-width: 15rem;">
+        <div class="card-header"> En fazla başlığa sahip kategori adı</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(3).Value</p>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-gray-dark  " style="max-width: 15rem;">
+        <div class="card-header">Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</div>
+        <div class="card-body">
+
+            <p class="card-text">@Model.ElementAt(4).Value</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+
