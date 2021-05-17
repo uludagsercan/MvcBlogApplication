@@ -34,14 +34,24 @@ namespace MvcBlogApplication.UI.Controllers
             return View(cm.GetCategory(id));
         }
         [HttpPost]
-        public ActionResult UpdateCategory(Category p,int id)
+        public ActionResult UpdateCategory(Category p)
         {
-            Category category = new Category();
-            category = cm.GetCategory(id);
-            category.CategoryName = p.CategoryName;
-            category.CategoryDate = DateTime.Now;
-            cm.UpdateCategoryBl(category);
-            return RedirectToAction("Index");
+            CategoryValidator validationRules = new CategoryValidator();
+            ValidationResult validationResult = validationRules.Validate(p);
+            if (validationResult.IsValid)
+            {
+                p.CategoryDate = DateTime.Now;
+                cm.UpdateCategoryBl(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View(cm.GetCategory(p));
         }
 
         public ActionResult AddCategory()

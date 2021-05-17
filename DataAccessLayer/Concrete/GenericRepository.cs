@@ -20,13 +20,17 @@ namespace DataAccessLayer.Concrete
         }
         public void Delete(T p)
         {
-            _object.Remove(p);
+            var deletedEntity = c.Entry(p);
+            deletedEntity.State = EntityState.Deleted;
+           // _object.Remove(p);
             c.SaveChanges();
         }
 
         public void Insert(T p)
         {
-            _object.Add(p);
+            var addedEntity = c.Entry(p);
+            addedEntity.State = EntityState.Added;
+            //_object.Add(p);
             c.SaveChanges();
         }
 
@@ -45,6 +49,8 @@ namespace DataAccessLayer.Concrete
 
         public void Update(T p)
         {
+            var modifiedEntity = c.Entry(p);
+            modifiedEntity.State = EntityState.Modified;
             c.SaveChanges();
         }
         public T Find(Expression<Func<T, bool>> filter)

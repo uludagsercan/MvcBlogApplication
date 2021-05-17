@@ -44,7 +44,7 @@
                         <button type="submit" name="CategoryId" value=@item.CategoryId class="btn btn-danger">Sil</button>
                     </td>
                 }
-                @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Get, item.CategoryId))
+                @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Get))
                 {
                     <td>
                         <button type="submit" value=@item.CategoryId name="id" class="btn btn-warning">Güncelle</button>

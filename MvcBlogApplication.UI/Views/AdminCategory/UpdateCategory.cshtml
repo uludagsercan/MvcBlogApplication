@@ -4,11 +4,26 @@
     ViewBag.Title = "UpdateCategory";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br />
+<h1>Güncelleme Sayfası</h1>
 
-<div class="row">
-    @using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Post))
-    {
-        @Html.TextBoxFor(x => x.CategoryName)
-        <button type="submit" name="id" value=@Model.CategoryId>Kaydet</button>
-    }
-</div>
+@using (Html.BeginForm("UpdateCategory", "AdminCategory", FormMethod.Post,Model.CategoryId))
+{
+    <div class="form-group">
+        <br />  
+        @Html.Label("Id")
+        <input type="text" class="form-control" disabled value="@Model.CategoryId" />
+
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryName)<br />
+
+        @Html.Label("Kategori Açıklama")
+        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryDescription)<br />
+        <button type="submit" value=@Model.CategoryId name="CategoryId" class="btn btn-success">Güncelle</button>
+
+
+    </div>
+}
+

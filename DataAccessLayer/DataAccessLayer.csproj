@@ -78,6 +78,22 @@
     <Compile Include="Migrations\202104241744201_migration3.designer.cs">
       <DependentUpon>202104241744201_migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105162201419_migration4.cs" />
+    <Compile Include="Migrations\202105162201419_migration4.designer.cs">
+      <DependentUpon>202105162201419_migration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162340145_migration5.cs" />
+    <Compile Include="Migrations\202105162340145_migration5.designer.cs">
+      <DependentUpon>202105162340145_migration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162346169_migration6.cs" />
+    <Compile Include="Migrations\202105162346169_migration6.designer.cs">
+      <DependentUpon>202105162346169_migration6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105170003409_migration7.cs" />
+    <Compile Include="Migrations\202105170003409_migration7.designer.cs">
+      <DependentUpon>202105170003409_migration7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +116,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104241744201_migration3.resx">
       <DependentUpon>202104241744201_migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162201419_migration4.resx">
+      <DependentUpon>202105162201419_migration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162340145_migration5.resx">
+      <DependentUpon>202105162340145_migration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162346169_migration6.resx">
+      <DependentUpon>202105162346169_migration6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105170003409_migration7.resx">
+      <DependentUpon>202105170003409_migration7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
