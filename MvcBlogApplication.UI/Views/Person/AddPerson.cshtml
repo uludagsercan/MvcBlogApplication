@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concrete
+@model Person
+@{
+    ViewBag.Title = "AddPerson";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+Kişi Ekleme Sayfası
+
+@using (Html.BeginForm("AddPerson", "Person", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label>İsim - Soyisim</label>
+        @Html.TextBoxFor(x => x.PersonFullName, new { @class = "form-control" })
+        <label>Departman</label>
+        @Html.TextBoxFor(x => x.PersonDepartment, new { @class = "form-control" })        
+
+        <button type="submit" class="btn btn-success ">Kişi Ekle</button>
+    </div>
+
+}
+

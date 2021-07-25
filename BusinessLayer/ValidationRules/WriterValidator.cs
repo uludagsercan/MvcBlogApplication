@@ -21,7 +21,7 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterPassword).NotEmpty().WithMessage("Yazar şifresi alanı boş geçilemez");
             RuleFor(x => x.WriterPassword).MaximumLength(6).WithMessage("Yazar şifre alanı en az 6 karakterden oluşmak zorundadır");
             RuleFor(x => x.WriterPassword).MaximumLength(16).WithMessage("Yazar şifre alanı en fazla 16 karakterden oluşmak zorundadır");
-            RuleFor(x => x.WriterAbout).NotEmpty().Must(CheckAbout).WithMessage("Yazar hakkında alanında mutlaka 'a' harfi geçmesi zorunludur");
+            RuleFor(x => x.WriterAbout).NotEmpty().Must(CheckAbout).WithMessage("Yazar hakkında alanında mutlaka 'a' harfi geçmesi zorunludur ve Yazar hakkında alanı boş geçilemez");
             RuleFor(x => x.WriterEmail).Must(CheckEmail).WithMessage("Yazar email alanı hatalı girilmiştir veya boş geçilmiştir. ");
             
             

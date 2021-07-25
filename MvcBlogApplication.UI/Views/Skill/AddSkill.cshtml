@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model Skill
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Yetenek Ekleme Sayfası</h1> <br />
+@using (Html.BeginForm("AddSkill", "Skill", FormMethod.Post))
+{
+
+<div class="form-group">
+    <label>Id</label>
+    @Html.DropDownListFor(x => x.PersonId, (List<SelectListItem>)ViewBag.listPerson, new { @class = "form-control" })
+    <label>İlgi Alanları</label>
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+
+    <label>Yeteneğinizin Yüzdesi</label>
+    <input type="number" name="Precentage" class="form-control" /><br />
+
+    <button type="submit" class="btn btn-success ">Yetenek Ekle</button>
+</div>
+    
+}
+<div>
+    <a href="/Person/Index/" class="btn btn-warning">Geri Dön <i class="fa fa-angle-double-left" ></i></a>
+</div>
+

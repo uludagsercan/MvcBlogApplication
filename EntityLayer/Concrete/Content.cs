@@ -16,6 +16,7 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public String ContentImage { get; set; }
         public DateTime ContentDate { get; set; }
+        public bool ContentStatus { get; set; }
         public int HeadingId { get; set; }
         public int? WriterId { get; set; }
         public virtual Heading Heading { get; set; }

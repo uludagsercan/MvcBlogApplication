@@ -15,7 +15,7 @@ namespace EntityLayer.Concrete
         public String WriterName { get; set; }
         [StringLength(50)]
         public String WriterSurname { get; set; }
-        [StringLength(100)]
+        [StringLength(250)]
         public String WriterImage { get; set; }
         [StringLength(200)]
         public String WriterEmail { get; set; }
@@ -24,7 +24,7 @@ namespace EntityLayer.Concrete
         [StringLength(200)]
         public String WriterPassword { get; set; }
         public DateTime WriterDate { get; set; }
-
+        public bool WriterStatus { get; set; }
         public ICollection<Content> Contents { get; set; }
        // public ICollection<Category> Categories { get; set; }
         public ICollection<Heading> Headings { get; set; }

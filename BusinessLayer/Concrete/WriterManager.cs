@@ -28,6 +28,10 @@ namespace BusinessLayer.Concrete
         {
             return writerDal.Get(x => x.WriterId == writer.WriterId);
         }
+        public Writer GetByIdBl(int id)
+        {
+            return writerDal.Get(x => x.WriterId == id);
+        }
         public void WriterDelete(Writer writer)
         {
             writerDal.Delete(writer);

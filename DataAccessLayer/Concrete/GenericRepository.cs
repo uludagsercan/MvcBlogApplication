@@ -49,10 +49,12 @@ namespace DataAccessLayer.Concrete
 
         public void Update(T p)
         {
+            
             var modifiedEntity = c.Entry(p);
             modifiedEntity.State = EntityState.Modified;
             c.SaveChanges();
         }
+        
         public T Find(Expression<Func<T, bool>> filter)
         {
             return _object.Find(filter);

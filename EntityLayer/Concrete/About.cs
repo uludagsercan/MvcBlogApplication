@@ -19,6 +19,7 @@ namespace EntityLayer.Concrete
         public String AboutImageSource1 { get; set; }
         [StringLength(100)]
         public String AboutImageSource2 { get; set; }
+        public bool AboutStatus { get; set; }
 
     }
 }

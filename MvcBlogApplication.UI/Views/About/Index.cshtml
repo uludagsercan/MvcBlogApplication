@@ -1,0 +1,58 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br /><br />
+<h2>Hakkımızda Sayfası</h2>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Detay 1</th>
+            <th>Detay 2</th>
+            <th>Durum</th>
+            <th>Aktif-Pasif</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AboutId
+                </td>
+                <td>@item.AboutDetails1</td>
+                <td>@item.AboutDetails2</td>
+                @if (item.AboutStatus)
+                {
+                    <td><p class="text text-success">Aktif</p></td>
+                }
+                else
+                {
+                    <td><p class="text text-warning">Pasif</p></td>
+                }
+
+                @using (Html.BeginForm("AboutStatus", "About", FormMethod.Post))
+                {
+                    if (!item.AboutStatus)
+                    {
+                        <td>
+                            <button type="submit" class="btn btn-success" name="id" value="@item.AboutId">Aktif Yap</button>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <button type="submit" class="btn btn-warning" name="id" value="@item.AboutId">Pasif Yap</button>
+                        </td>
+                    }
+                }
+            </tr>
+
+        }
+    </table>
+    
+</div>
+
+<br />
+@Html.Action("AboutPartial", "About")

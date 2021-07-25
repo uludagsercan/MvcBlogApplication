@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concrete
+@model List<Person>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>
+            Ad-Soyad
+        </th>
+        <th>
+            Departman
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.PersonId
+            </td>
+            <td>
+                @item.PersonFullName
+            </td>
+            <td>
+                @item.PersonDepartment
+            </td>
+            <td>
+                <a href="/Skill/AddSkill/@item.PersonId" class="btn btn-success">Yetenek ekle</a>
+                <a href="/Skill/Index/@item.PersonId" class="btn btn-warning">Yetenek Kartı Görüntüle</a>
+            </td>
+        </tr>
+    }
+</table>
+@using (Html.BeginForm("AddPerson", "Person", FormMethod.Get))
+{
+    <div class="form-group">
+        <button class="btn btn-info">Kişi Ekle</button>
+    </div>
+}
+

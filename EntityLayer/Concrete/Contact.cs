@@ -18,6 +18,11 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public String Subject { get; set; }
         [StringLength(255)]
+
         public String Message { get; set; }
+        public bool ContactStatus { get; set; }
+        public DateTime ContactDate { get; set; }
+
+        public bool ReadStatus { get; set; }
     }
 }
