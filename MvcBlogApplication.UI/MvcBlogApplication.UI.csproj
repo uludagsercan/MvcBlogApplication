@@ -2038,6 +2038,7 @@
     <Content Include="ScreenShot\3.png" />
     <Content Include="ScreenShot\4.png" />
     <Content Include="ScreenShot\5.png" />
+    <Content Include="ScreenShot\6.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="AdminLTE-3.0.4\.babelrc" />
